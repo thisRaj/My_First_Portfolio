@@ -1,309 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Your Full Name - Personal Portfolio</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Enhanced HTML Page</title>
     <style>
-        /* Basic CSS for structure, readability, and a clean look */
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            scroll-behavior: smooth; /* For smooth scrolling on navigation */
+        /* Basic styling for the table for better readability */
+        table {
+            width: 80%; /* Adjust width as needed */
+            margin: 20px auto; /* Center table and add some margin */
+            border-collapse: collapse; /* Remove double borders */
+            font-family: Arial, sans-serif; /* Consistent font */
         }
-
-        .container {
-            width: 85%;
-            max-width: 1100px; /* Max width for larger screens */
-            margin: auto;
-            overflow: hidden; /* Contains floats */
-            padding: 0 20px;
+        th, td {
+            border: 1px solid #ddd; /* Light grey border */
+            padding: 10px; /* Add some padding in cells */
+            text-align: left; /* Align text to the left */
         }
-
-        header {
-            background: #333;
-            color: #fff;
-            padding: 40px 0 20px 0; /* More padding at the top */
-            min-height: 70px;
-            border-bottom: #50b3a2 5px solid; /* A nice accent color */
-            text-align: center;
+        th {
+            background-color: #f2f2f2; /* Light grey background for header */
+            color: #333; /* Darker text for header */
+            font-weight: bold;
         }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.8em;
-            letter-spacing: 1px;
-        }
-
-        header p {
+        caption {
+            caption-side: top;
             font-size: 1.2em;
-            margin-top: 5px;
-            color: #ccc; /* Lighter color for tagline */
-        }
-
-        nav {
-            background: #444;
-            color: #fff;
-            padding: 15px 0;
-            text-align: center;
-            position: sticky; /* Sticky navigation bar */
-            top: 0;
-            z-index: 1000; /* Ensure nav is above other content */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        nav ul {
-            padding: 0;
-            list-style: none;
-            margin: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 20px; /* Increased spacing */
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.1em;
-            transition: color 0.3s ease; /* Smooth transition for hover */
-        }
-
-        nav a:hover, nav a:focus {
-            color: #50b3a2; /* Accent color on hover/focus */
-        }
-
-        section {
-            padding: 50px 20px; /* Increased padding for sections */
-            margin-bottom: 25px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1); /* Subtle shadow for sections */
-        }
-
-        section h2 {
-            color: #333;
-            text-align: center;
-            margin-top: 0; /* Remove default top margin */
-            margin-bottom: 30px; /* Increased bottom margin */
-            font-size: 2.2em;
-            border-bottom: 2px solid #50b3a2; /* Underline for section titles */
-            display: inline-block; /* To make border-bottom fit content */
-            padding-bottom: 10px;
-        }
-        /* Center the h2 titles */
-        section div.section-title-container {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-
-        .project {
-            background: #f9f9f9;
-            padding: 25px;
-            margin-bottom: 25px;
-            border-left: #50b3a2 5px solid;
-            border-radius: 0 8px 8px 0; /* Rounded corners on one side */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .project:hover {
-            transform: translateY(-5px); /* Slight lift on hover */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-        }
-
-        .project h3 {
-            margin-top: 0;
-            color: #333;
-            font-size: 1.6em;
-        }
-
-        .project p {
-            font-size: 1em;
-            margin-bottom: 15px;
-        }
-
-        .project a {
-            display: inline-block;
-            margin-top: 10px;
-            background: #333;
-            color: #fff;
-            padding: 10px 18px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .project a:hover {
-            background: #50b3a2; /* Accent color on hover */
-        }
-
-        #about ul {
-            list-style: disc; /* Standard bullet points */
-            padding-left: 20px;
-        }
-         #about ul li {
-            margin-bottom: 8px;
-         }
-
-        #contact ul {
-            list-style: none;
-            padding: 0;
-            text-align: center;
-        }
-
-        #contact ul li {
-            margin-bottom: 15px;
-            font-size: 1.1em;
-        }
-        #contact ul li a {
-            color: #333;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        #contact ul li a:hover {
-            color: #50b3a2;
-        }
-
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            background: #333;
-            color: #fff;
-            margin-top: 30px;
-        }
-        footer p {
-            margin: 0;
-        }
-
-        /* Responsive adjustments */
-        @media(max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-            }
-            header p {
-                font-size: 1em;
-            }
-            nav ul li {
-                display: block;
-                margin: 10px 0;
-            }
-            .container {
-                width: 95%;
-            }
-            section h2 {
-                font-size: 1.8em;
-            }
-            .project h3 {
-                font-size: 1.4em;
-            }
+            font-weight: bold;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
     <header>
-        <!-- The container div inside header is optional if header itself handles width,
-             but can be useful for aligning content if header is full-width.
-             For this design, text-align: center on header is sufficient. -->
-        <h1>Jalil Muyeke</h1>
-        <p>This is all possible</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tweets.html">Tweets</a></li>
+                </ul>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#introduction">Introduction</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <main>
+        <article>
+            <h1>Welcome to My Page</h1>
+            <p>This is the primary introduction to the content of this page.</p>
 
-    <div class="container">
-        <section id="introduction">
-            <div class="section-title-container"><h2>Introduction</h2></div>
-            <p>
-                Hello! I'm Jalil Muyeke, a passionate and dedicated Software Developer and Web Designer.
-                with a keen interest in creating user-friendly web applications, data visualization, artificial intelligence.
-                I thrive on solving complex problems and crafting innovative solutions that make a difference. This portfolio is a glimpse into
-                my journey, skills, and the projects I've had the pleasure of bringing to life. Welcome, and I hope you enjoy exploring my work!
-            </p>
-        </section>
+            <h2>Section One: About Me</h2>
+            <p>Here's a paragraph discussing something interesting. I am learning a lot about HTML structure and how to build web pages from scratch. It's fascinating how these simple tags can create complex layouts and present information effectively to users across the globe.</p>
 
-        <section id="projects">
-            <div class="section-title-container"><h2>Projects</h2></div>
-            <article class="project">
-                <h3>Project Title 1: Example E-commerce Platform</h3>
-                <p>
-                    A full-stack e-commerce platform developed using [mention key technologies like React for frontend, Node.js/Express for backend, MongoDB for database].
-                    This project aimed to provide a seamless shopping experience for users, featuring product listings, user authentication, shopping cart functionality, and an admin panel for managing inventory.
-                    My role involved [e.g., developing the frontend components, designing the API, setting up the database schema].
-                </p>
-                <a href="https://github.com/yourusername/project1-repo" target="_blank">View Project/Code</a>
-            </article>
+            <h3>Subsection: My Hobbies</h3>
+            <p>In this subsection, I might talk about my hobbies. For example, I enjoy coding, reading, and exploring new technologies. Each hobby brings its own set of challenges and rewards, contributing to personal growth and learning.</p>
+            <p>Another paragraph to meet the requirement of at least four paragraphs. HTML provides a way to structure text and multimedia content on the web, forming the backbone of most websites you visit daily.</p>
+            <p>This is the fourth paragraph. Ensuring content is well-organized with headings and paragraphs improves readability and user experience, making it easier for visitors to find the information they need.</p>
 
-            <article class="project">
-                <h3>Project Title 2: Personal Blog System</h3>
-                <p>
-                    A dynamic personal blog system built with [mention technologies like Python/Django, Ruby on Rails, or a static site generator like Jekyll/Hugo].
-                    It allows for creating, editing, and deleting blog posts, managing categories, and user comments. Focused on clean design and fast load times.
-                    I was responsible for [e.g., the entire development cycle, from database design to frontend implementation].
-                </p>
-                <a href="https://example.com/your-blog-project-live-url" target="_blank">View Live Project</a>
-            </article>
+            <h2>Section Two: Clickable Image</h2>
+            <p>Below is a clickable image. It links to the ALX Africa homepage.</p>
+            <a href="https://www.alxafrica.com/" target="_blank">
+                <img src="https://i.ibb.co/gTDZZT8/ALX-Logo-07.png" alt="ALX Africa Logo" style="width:200px;height:auto;">
+            </a>
 
-            <article class="project">
-                <h3>Project Title 3: Data Analysis Dashboard</h3>
-                <p>
-                    An interactive dashboard for visualizing [type of data, e.g., sales data, sensor data] using [tools like Python (Plotly Dash/Streamlit), Tableau, or D3.js].
-                    The project involved data cleaning, processing, and creating insightful visualizations to help stakeholders make informed decisions. Key features include [e.g., real-time updates, filterable charts].
-                </p>
-                <a href="https://link-to-your-dashboard-or-report.com" target="_blank">View Dashboard</a>
-            </article>
-            </section>
+            <h2>Learner Information</h2>
+            <table>
+                <caption>Meet Some of Our Learners</caption>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Country</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John</td>
+                        <td>25</td>
+                        <td>USA</td>
+                    </tr>
+                    <tr>
+                        <td>Emily</td>
+                        <td>28</td>
+                        <td>Canada</td>
+                    </tr>
+                    <tr>
+                        <td>Michael</td>
+                        <td>32</td>
+                        <td>Australia</td>
+                    </tr>
+                    <tr>
+                        <td>Sophia</td>
+                        <td>21</td>
+                        <td>UK</td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
 
-        <section id="about">
-            <div class="section-title-container"><h2>About Me</h2></div>
-            <p>
-                I hold a [Your Degree, e.g., Bachelor of Science in Computer Science] from [Your University/Institution Name]. My passion for [Your Field]
-                was ignited during [a specific course, personal project, or experience]. Since then, I've been dedicated to honing my skills and
-                staying updated with the latest industry trends.
-            </p>
-            <p>
-                Key Skills:
-            </p>
-            <ul>
-                <li>Programming Languages: [e.g., Python, JavaScript, Java, C#]</li>
-                <li>Frameworks & Libraries: [e.g., React, Angular, Vue.js, Node.js, Django, Spring Boot]</li>
-                <li>Databases: [e.g., MySQL, PostgreSQL, MongoDB, Firebase]</li>
-                <li>Tools & Platforms: [e.g., Git, GitHub, Docker, AWS, Azure, Figma]</li>
-                <li>Methodologies: [e.g., Agile, Scrum, Test-Driven Development]</li>
-            </ul>
-            <p>
-                When I'm not coding or working on projects, I enjoy [Hobby 1, e.g., hiking in nature], [Hobby 2, e.g., reading tech blogs],
-                and [Hobby 3, e.g., playing a musical instrument]. These activities help me recharge and bring fresh perspectives to my work.
-                I am a strong believer in continuous learning and collaboration.
-            </p>
-        </section>
-
-        <section id="contact">
-            <div class="section-title-container"><h2>Contact</h2></div>
-            <p>I'm excited to connect with you! Whether you have a project idea, a question, or just want to say hi, feel free to reach out.</p>
-            <ul>
-                <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/yourlinkedinprofile" target="_blank">linkedin.com/in/yourlinkedinprofile</a></li>
-                <li>GitHub: <a href="https://github.com/yourgithubusername" target="_blank">github.com/yourgithubusername</a></li>
-                </ul>
-        </section>
-    </div>
+        <aside>
+            <p>placeholder to add comment thread later</p>
+        </aside>
+    </main>
 
     <footer>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
+        <p>Jalil Muyeke - <a href="https://www.example.com" target="_blank">here</a></p>
     </footer>
 </body>
 </html>
